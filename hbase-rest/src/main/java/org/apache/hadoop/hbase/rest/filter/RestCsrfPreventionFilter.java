@@ -87,9 +87,9 @@ public class RestCsrfPreventionFilter implements Filter {
       agents = BROWSER_USER_AGENTS_DEFAULT;
     }
     parseBrowserUserAgents(agents);
-    LOG.info("Adding cross-site request forgery (CSRF) protection, "
-        + "headerName = {}, methodsToIgnore = {}, browserUserAgents = {}",
-        headerName, methodsToIgnore, browserUserAgents);
+    LOG.info(String.format("Adding cross-site request forgery (CSRF) protection, "
+        + "headerName = %s, methodsToIgnore = %s, browserUserAgents = %s",
+        headerName, methodsToIgnore, browserUserAgents));
   }
 
   void parseBrowserUserAgents(String userAgents) {
